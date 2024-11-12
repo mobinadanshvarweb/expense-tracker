@@ -39,6 +39,7 @@ const AddReminderCategory = () => {
           >
             Add
           </button>
+          <span className="flex w-full h-[1px] bg-darky my-2"></span>
         </>
       )}
     </div>

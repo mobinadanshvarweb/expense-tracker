@@ -5,6 +5,7 @@ import AddReminder from "./AddReminder";
 import AddReminderCategory from "./AddReminderCategory";
 import { setDescription, setName } from "../../store/slice/reminder-slice";
 import { RootState } from "../../store/store";
+import MyDatePicker from "../../components/DatePicker";
 
 const ReminderDetails = ({ setShow }: { setShow: (show: boolean) => void }) => {
   const dispatch = useDispatch();
@@ -43,6 +44,7 @@ const ReminderDetails = ({ setShow }: { setShow: (show: boolean) => void }) => {
         />
         <Selects />
         <AddReminderCategory />
+        <MyDatePicker />
         <AddReminder />
       </div>
     </div>
