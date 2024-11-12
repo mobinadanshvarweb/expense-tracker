@@ -7,7 +7,7 @@ const ReminderList = () => {
   console.log(reminder, "rem");
 
   return (
-    <div className="p-3 border w-full flex flex-col gap-2">
+    <div className="p-3 border w-full flex flex-col gap-4 mb-40">
       {reminder.map((remind) => {
         return (
           <ReminderCart
