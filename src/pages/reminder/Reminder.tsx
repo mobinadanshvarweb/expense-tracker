@@ -13,9 +13,9 @@ const Reminder = () => {
         onClick={() => {
           setShow(!show);
         }}
-        className="fixed bottom-16 left-[50%] translate-x-[-50%] border border-red-400 flex justify-center items-center px-4 py-2 bg-gray-800 text-white"
+        className="fixed bottom-20 left-[50%] translate-x-[-50%]  flex justify-center items-center px-4 py-2 bg-darkorangy text-darky rounded-3xl font-bold"
       >
-        add Reminder
+        Set Reminder
       </span>
     </div>
   );

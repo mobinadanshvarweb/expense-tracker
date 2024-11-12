@@ -5,21 +5,31 @@ export interface ReminderState {
   name: string;
   description: string;
   selected: { name: string };
+  amount: string;
+  counterparty: string;
   category: string;
+  date: Date;
+
   categories: Array<{ name: string }>;
   reminder: Array<{
     id: number;
     name: string;
     description: string;
+    amount: string;
+    counterparty: string;
     selected: string;
+    date: Date;
   }>;
 }
 
 const initialState: ReminderState = {
   name: "",
   description: "",
+  amount: "",
+  counterparty: "",
   selected: { name: "" },
   category: "",
+  date: new Date(),
   categories: (() => {
     const storedCategories = JSON.parse(
       localStorage.getItem("categories") || "[]"
@@ -40,11 +50,20 @@ export const reminderSlice = createSlice({
     setDescription: (state, action: PayloadAction<string>) => {
       state.description = action.payload;
     },
+    setAmount: (state, action) => {
+      state.amount = action.payload;
+    },
+    setCounterparty: (state, action) => {
+      state.counterparty = action.payload;
+    },
     setSelected(state, action: PayloadAction<{ name: string }>) {
       state.selected = action.payload;
     },
     setCategory: (state, action: PayloadAction<string>) => {
       state.category = action.payload;
+    },
+    setDate: (state, action) => {
+      state.date = action.payload;
     },
     setCategories: (state) => {
       if (state.category.trim() !== "") {
@@ -57,16 +76,28 @@ export const reminderSlice = createSlice({
       state.reminder = action.payload;
       localStorage.setItem("reminders", JSON.stringify(state.reminder));
     },
+    resetReminder: (state) => {
+      state.name = "";
+      state.description = "";
+      state.amount = "";
+      state.counterparty = "";
+      state.selected.name = "";
+      state.date = new Date();
+    },
   },
 });
 
 export const {
   setName,
   setDescription,
+  setAmount,
+  setCounterparty,
   setSelected,
   setCategory,
+  setDate,
   setCategories,
   setReminder,
+  resetReminder,
 } = reminderSlice.actions;
 
 export default reminderSlice.reducer;

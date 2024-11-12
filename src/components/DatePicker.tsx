@@ -1,26 +1,21 @@
-import { useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../store/store";
+import { setDate } from "../store/slice/reminder-slice";
 
 function MyDatePicker() {
-  const savedDate = localStorage.getItem("selectedDate");
-  const [startDate, setStartDate] = useState(
-    savedDate ? new Date(savedDate) : null
-  );
-
-  useEffect(() => {
-    if (startDate) {
-      localStorage.setItem("selectedDate", startDate.toISOString());
-    }
-  }, [startDate]);
+  const dispatch = useDispatch();
+  const date = useSelector((state: RootState) => state.reminder.date);
 
   return (
     <div className="w-full justify-center flex">
       <DatePicker
-        selected={startDate}
-        className="flex-1 w-[285px] max-w-xs bg-[#cfdee3ab] flex justify-center p-2 rounded-lg border border-darky"
-        onChange={(date) => setStartDate(date)}
+        selected={new Date(date)}
+        className="flex-1 w-[300px] max-w-xs bg-[#cfdee3ab] flex justify-center p-2 rounded-lg border border-darky"
+        onChange={(date) => dispatch(setDate(date))}
         dateFormat="yyyy/MM/dd"
+        placeholderText="Choose Date"
       />
     </div>
   );

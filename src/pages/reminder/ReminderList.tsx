@@ -1,16 +1,25 @@
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
-import ReminderCart from "./ReminderCart";
+// import ReminderCart from "./ReminderCart";
 
 const ReminderList = () => {
   const reminder = useSelector((state: RootState) => state.reminder.reminder);
   console.log(reminder, "rem");
 
   return (
-    <div className="p-3 border w-full">
-      {reminder.map((remind) => {
-        return <ReminderCart key={remind.name} />;
-      })}
+    <div className="p-3 border w-full flex flex-col gap-2">
+      {/* {reminder.map((remind) => {
+        return (
+          <ReminderCart
+            key={remind.id}
+            amount={remind.amount}
+            counterparty={remind.counterparty}
+            description={remind.description}
+            name={remind.name}
+            selected={remind.selected}
+          />
+        );
+      })} */}
     </div>
   );
 };

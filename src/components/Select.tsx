@@ -37,12 +37,12 @@ export default function Example() {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <ListboxOptions className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-[#cfdee3d7] py-1 text-base shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm">
+            <ListboxOptions className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-[#cfdee3] py-1 text-base shadow-lg z-10  ring-1 ring-black/5 focus:outline-none sm:text-sm">
               {categoies.map((person, personIdx) => (
                 <ListboxOption
                   key={personIdx}
                   className={({ active }) =>
-                    `relative cursor-default select-none py-2 pl-10 pr-4 ${
+                    `relative cursor-default select-nonen py-2 pl-10 pr-4 ${
                       active ? "bg-darky text-lightorangy" : "text-gray-900"
                     }`
                   }

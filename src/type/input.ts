@@ -3,5 +3,5 @@ export type InputProps = {
   placeholder: string;
   classname?: string;
   onchange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  value?: string;
+  value: string;
 };
