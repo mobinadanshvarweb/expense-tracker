@@ -9,7 +9,7 @@ const App = () => {
         <div className="flex-1">
           <Outlet />
         </div>
-        <div className=" fixed bottom-0 left-0 flex justify-between px-2 py-5 w-full bg-darky">
+        <div className="w-full lg:w-[50%] fixed bottom-0 left-[50%] translate-x-[-50%] flex justify-between px-2 py-5 bg-darky">
           <Navigation
             icon="/icon/home.svg"
             isActive={location.pathname.endsWith("home")}

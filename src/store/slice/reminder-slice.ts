@@ -17,7 +17,7 @@ export interface ReminderState {
     description: string;
     amount: string;
     counterparty: string;
-    selected: string;
+    selected: { name: string };
     date: Date;
   }>;
 }
@@ -34,8 +34,10 @@ const initialState: ReminderState = {
     const storedCategories = JSON.parse(
       localStorage.getItem("categories") || "[]"
     );
-
-    return [...reminderCategory, ...storedCategories];
+    // اگر هیچ داده‌ای نباشه، از reminderCategory استفاده کنیم
+    return storedCategories.length > 0
+      ? storedCategories
+      : [...reminderCategory];
   })(),
   reminder: JSON.parse(localStorage.getItem("reminders") || "[]") || [],
 };
@@ -67,11 +69,22 @@ export const reminderSlice = createSlice({
     },
     setCategories: (state) => {
       if (state.category.trim() !== "") {
-        state.categories.push({ name: state.category });
-        localStorage.setItem("categories", JSON.stringify(state.categories));
-        state.category = "";
+        // بررسی اینکه آیا این دسته قبلاً در دسته‌ها وجود دارد یا خیر
+        const categoryExists = state.categories.some(
+          (category) => category.name === state.category
+        );
+
+        if (!categoryExists) {
+          // اگر دسته جدید است، آن را به لیست اضافه کنیم
+          state.categories.push({ name: state.category });
+          // فقط دسته‌های جدید را در localStorage ذخیره می‌کنیم
+          localStorage.setItem("categories", JSON.stringify(state.categories));
+        }
+
+        state.category = ""; // پاک کردن ورودی category بعد از افزودن
       }
     },
+
     setReminder: (state, action) => {
       state.reminder = action.payload;
       localStorage.setItem("reminders", JSON.stringify(state.reminder));
