@@ -1,4 +1,4 @@
-[DEMO]-(https://expense-tracker-rouge-seven.vercel.app/)
+[DEMO](https://expense-tracker-rouge-seven.vercel.app/)
 
 
 # React + TypeScript + Vite
