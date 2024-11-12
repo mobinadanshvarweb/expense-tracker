@@ -11,7 +11,7 @@ const Navigation: React.FC<NavigationProps> = ({
   return (
     <Link
       to={path}
-      className={`text-sm lg:text-xl cursor-pointer  w-1/4 text-lightorangy rounded flex justify-center items-center gap-1 ${
+      className={`text-sm lg:text-xl cursor-pointer py-1  w-1/4 text-lightorangy rounded flex justify-center items-center gap-1 ${
         isActive ? "bg-darkorangy" : ""
       }`}
     >
