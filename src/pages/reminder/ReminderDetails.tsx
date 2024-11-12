@@ -34,7 +34,7 @@ const ReminderDetails = ({ setShow }: { setShow: (show: boolean) => void }) => {
         onClick={(e) => {
           e.stopPropagation();
         }}
-        className="flex flex-col gap-6 min-h-[100vh] lg:gap-4 bg-lightorangy p-3 rounded-lg w-full max-w-lg box-border"
+        className="flex flex-col justify-end gap-6 min-h-[100vh] lg:gap-4 bg-lightorangy p-3 rounded-lg w-full max-w-lg box-border"
       >
         <div className="w-full flex justify-between">
           <span
