@@ -1,11 +1,13 @@
 import { Outlet, useLocation } from "react-router-dom";
 import Navigation from "./components/Navigation";
+import Header from "./components/Header";
 
 const App = () => {
   const location = useLocation();
   return (
     <div className="w-full flex justify-center items-center">
-      <div className="w-full lg:w-[50%] border rounded flex flex-col h-screen relative">
+      <div className="w-full lg:w-[50%] border rounded flex flex-col min-h-screen relative">
+        <Header />
         <div className="flex-1">
           <Outlet />
         </div>

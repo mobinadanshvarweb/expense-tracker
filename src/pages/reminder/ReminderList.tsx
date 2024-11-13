@@ -6,7 +6,7 @@ const ReminderList = () => {
   const reminder = useSelector((state: RootState) => state.reminder.reminder);
 
   return (
-    <div className="p-3 border w-full flex flex-col gap-4 mb-40">
+    <div className="p-3 w-full flex flex-col gap-4 mb-40">
       {reminder.map((remind) => {
         return (
           <ReminderCart
