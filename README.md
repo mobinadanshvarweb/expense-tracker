@@ -1,3 +1,7 @@
+# Suggestion
+
+it has been considered to be a mobile application so try it in your mobile device.
+
 [DEMO](https://expense-tracker-rouge-seven.vercel.app/)
 
 
