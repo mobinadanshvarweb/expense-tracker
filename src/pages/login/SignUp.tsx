@@ -40,7 +40,7 @@ const SignUp = () => {
 
   return (
     <div className="w-full min-h-screen flex  bg-darky justify-center items-center">
-      <div className="w-[90%] flex flex-col gap-6 justify-center items-center">
+      <div className="w-[90%] lg:w-fit flex flex-col gap-6 justify-center items-center">
         <h1 className="text-darkorangy font-extrabold  w-full text-3xl flex justify-center items-center">
           Expense Tracker
         </h1>
