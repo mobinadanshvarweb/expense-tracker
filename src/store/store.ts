@@ -1,10 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 import reminderSlice from "./slice/reminder-slice";
 import saveToLocalStorage from "../config/middelware";
+import signUpSlice from "./slice/sign-up-slice";
+import loginSlice from "./slice/login-slice";
 
 export const store = configureStore({
   reducer: {
     reminder: reminderSlice,
+    signup: signUpSlice,
+    login: loginSlice,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(saveToLocalStorage),

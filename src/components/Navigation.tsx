@@ -13,11 +13,11 @@ const Navigation: React.FC<NavigationProps> = ({
       to={path}
       className={`lg:text-xl cursor-pointer py-1  w-1/4 text-lightorangy rounded flex 
        flex-col text-xs justify-center items-center gap-1 ${
-         isActive ? "bg-darkorangy" : ""
+         isActive ? "" : ""
        }`}
     >
-      <Icon height={17} src={icon} width={17} />
-      {isActive && text}
+      <Icon height={20} src={icon} width={20} />
+      {isActive && <span className="text-xs ">{text}</span>}
     </Link>
   );
 };

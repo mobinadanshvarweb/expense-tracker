@@ -4,6 +4,8 @@ import Home from "../pages/home/Home";
 import Chart from "../pages/chart/Chart";
 import Reminder from "../pages/reminder/Reminder";
 import Setting from "../pages/setting/Setting";
+import SignUp from "../pages/login/SignUp";
+import Login from "../pages/login/Login";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +24,8 @@ const router = createBrowserRouter([
       { path: "/setting", element: <Setting /> },
     ],
   },
+  { path: "/signup", element: <SignUp /> },
+  { path: "/login", element: <Login /> },
 ]);
 
 export default router;

@@ -4,7 +4,6 @@ import ReminderCart from "./ReminderCart";
 
 const ReminderList = () => {
   const reminder = useSelector((state: RootState) => state.reminder.reminder);
-  console.log(reminder, "rem");
 
   return (
     <div className="p-3 border w-full flex flex-col gap-4 mb-40">
