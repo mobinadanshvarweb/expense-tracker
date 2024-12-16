@@ -2,7 +2,7 @@
 
 it has been considered to be a mobile application so try it in your mobile device.
 
-[DEMO][(https://clock-nu-swart.vercel.app/)]
+
 
 
 # React + TypeScript + Vite
